@@ -1,5 +1,3 @@
-const { url } = require('inspector')
-
 const axios = require('axios').default
 
 
