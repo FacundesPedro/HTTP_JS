@@ -1,8 +1,8 @@
 const axios = require('axios').default
 
 
-async function func(url,joke){
-    
+async function func(url){
+    const joke;
     await axios.get(url)
         .then(res=>{
         console.log(res.headers["content-type"])
