@@ -2,12 +2,12 @@ const axios = require('axios').default
 
 
 async function func(url){
-    const joke;
+    let joke = '';
     await axios.get(url)
         .then(res=>{
         console.log(res.headers["content-type"])
-        const {setup,flags} = res.data
-        joke = setup
+        const {delivery,setup,flags} = res.data
+        joke = `${setup} ${delivery}`
         console.log(joke)
     })
     .catch(erro =>{
