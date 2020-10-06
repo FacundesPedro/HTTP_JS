@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <h1>Exercícios HTML</h1>
+
+        <nav>
+            <a href="./paginas/basic.html">nav_1</a>
+            <a href="./paginas/text1.html">Text_1</a>
+            <a href="./paginas/text2.html">Text_2</a>
+        </nav>
+        <section id="conteudo"></section>
+        <script>
+
+        document.querySelectorAll('a').forEach(link=>{
+    
+    link.onclick = function(e){
+         e.preventDefault()
+         const conteudo = document.getElementById("conteudo")
+         fetch(link.href)
+             .then(n => n.text())
+             .then(n => conteudo.innerHTML = n)
+    }
+})
+        </script>
+</body>
+</html>
